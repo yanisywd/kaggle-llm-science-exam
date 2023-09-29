@@ -1,26 +1,25 @@
-#Foundational Approach to Kaggle's LLM Science Exam Challenge
-
-In this repository, I present a foundational approach to tackling the Kaggle LLM Science Exam problem. By using the well-acknowledged transformer architecture, specifically the Roberta model, I aimed to provide a stable starting point for the challenge.
+Foundational Approach to Kaggle's LLM Science Exam Challenge
+In this repository, I present a foundational approach to tackling the Kaggle LLM Science Exam problem. By utilizing the acknowledged transformer architecture, especially the Roberta model, I aimed to offer a stable starting point for this challenge.
 
 Strategy Breakdown:
+Choice of Roberta: Using Roberta, a powerhouse in NLP, was a strategic starting point. By fine-tuning it with the roberta-base weights, the model was geared towards our specific dataset.
 
-Choice of Roberta: While Roberta is a robust model known for its performance in NLP tasks, it serves as a strong starting point. By fine-tuning using the roberta-base weights, I've leveraged its pre-existing knowledge for our dataset.
+Tokenization: Leveraged the Roberta tokenizer for dataset processing. The union of questions and options via a [SEP] token aims to give the model a unified context.
 
-Tokenization: The Roberta tokenizer was utilized to process the dataset. The questions and options were merged using a [SEP] token to provide a holistic context to the model.
+Data Management: Post-tokenization, data was converted into PyTorch tensors and divided into a training-validation split (90-10 ratio) to mitigate overfitting and ensure validation accuracy.
 
-Data Management: After tokenization, the data was structured into PyTorch tensors and segmented into a training-validation set (90-10 split). This split aimed to avoid overfitting while ensuring validation accuracy.
+Training: Engaged in a 10-epoch training using the AdamW optimizer and a 2e-5 learning rate. Incorporated a learning rate scheduler, adjusting based on validation accuracy.
 
-Training: The model underwent training for 10 epochs with the AdamW optimizer and a learning rate of 2e-5. I integrated a learning rate scheduler based on validation accuracy to promote an adaptive learning process.
+Validation: Post-training, the model was gauged against the validation set, with misclassifications hinting at areas of potential enhancement.
 
-Validation: Post-training, the model's performance was evaluated on the validation set. Keeping track of misclassifications serves as a window into potential areas of improvement.
-
-Prediction: For the test set, top-3 predictions were generated for each question, in line with the competition's requirements.
+Prediction: Predictions for the test set were extracted, with the top 3 predictions being pinpointed for every question, resonating with the competition's guidelines.
 
 Room for Improvement:
-While this approach sets a stable foundation, there's significant room for enhancements:
+While the approach is foundational, there's a wide scope for augmentations:
 
-Model Ensembling: Combining predictions from multiple models can potentially boost accuracy.
-Hyperparameter Tuning: A more exhaustive search for optimal parameters might further improve performance.
-Data Augmentation: Utilizing techniques like back translation could enrich our training dataset, potentially improving model robustness.
+Model Ensembling: Merging predictions across models can be a potential game-changer for accuracy.
+Hyperparameter Tuning: Rigorous exploration for optimal parameters might yield better outcomes.
+Data Augmentation: Techniques like back translation can diversify the training dataset, potentially bolstering model resilience.
 Concluding Thoughts:
-This repository offers a basic but competent strategy for the Kaggle LLM Science Exam. It's an amalgamation of my preliminary understanding of the challenge and the capabilities of transformer models. However, it should be noted that while this serves as a solid starting point, for benchmark-setting results, further refinement, and additional strategies would be essential.
+This repository serves as an introductory strategy for the Kaggle LLM Science Exam. It's a blend of my early understanding of the challenge combined with the prowess of transformer models. It's pertinent to note that while this provides a solid foundation, achieving benchmark-setting outcomes demands further refinement and nuanced strategies.
+
