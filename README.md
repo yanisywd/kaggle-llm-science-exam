@@ -1,25 +1,41 @@
-Foundational Approach to Kaggle's LLM Science Exam Challenge
-In this repository, I present a foundational approach to tackling the Kaggle LLM Science Exam problem. By utilizing the acknowledged transformer architecture, especially the Roberta model, I aimed to offer a stable starting point for this challenge.
+# Kaggle LLM Science Exam: Foundational Approach
 
-Strategy Breakdown:
-Choice of Roberta: Using Roberta, a powerhouse in NLP, was a strategic starting point. By fine-tuning it with the roberta-base weights, the model was geared towards our specific dataset.
+In this repository, I present a foundational approach for the Kaggle LLM Science Exam. By utilizing transformer architectures and the Roberta model, I've laid down a solid groundwork for this challenge.
 
-Tokenization: Leveraged the Roberta tokenizer for dataset processing. The union of questions and options via a [SEP] token aims to give the model a unified context.
+## 📖 Table of Contents
+- [Strategy Breakdown](#strategy-breakdown)
+- [Room for Improvement](#room-for-improvement)
+- [Concluding Thoughts](#concluding-thoughts)
 
-Data Management: Post-tokenization, data was converted into PyTorch tensors and divided into a training-validation split (90-10 ratio) to mitigate overfitting and ensure validation accuracy.
+## 🛠 Strategy Breakdown
 
-Training: Engaged in a 10-epoch training using the AdamW optimizer and a 2e-5 learning rate. Incorporated a learning rate scheduler, adjusting based on validation accuracy.
+### Choice of Roberta 
+Utilizing Roberta, a known entity in NLP, was a deliberate initial step. Fine-tuning it with the `roberta-base` weights makes it tailor-suited for our dataset.
 
-Validation: Post-training, the model was gauged against the validation set, with misclassifications hinting at areas of potential enhancement.
+### Tokenization
+Employed the Roberta tokenizer. Merging questions with options using a [SEP] token gives the model a combined context.
 
-Prediction: Predictions for the test set were extracted, with the top 3 predictions being pinpointed for every question, resonating with the competition's guidelines.
+### Data Management
+Post-tokenization, data is transformed into PyTorch tensors. There's a 90-10 training-validation split to counteract overfitting.
 
-Room for Improvement:
-While the approach is foundational, there's a wide scope for augmentations:
+### Training
+Engaged in a 10-epoch training cycle using the AdamW optimizer and a 2e-5 learning rate. Also integrated a learning rate scheduler that's validation accuracy-centric.
 
-Model Ensembling: Merging predictions across models can be a potential game-changer for accuracy.
-Hyperparameter Tuning: Rigorous exploration for optimal parameters might yield better outcomes.
-Data Augmentation: Techniques like back translation can diversify the training dataset, potentially bolstering model resilience.
-Concluding Thoughts:
-This repository serves as an introductory strategy for the Kaggle LLM Science Exam. It's a blend of my early understanding of the challenge combined with the prowess of transformer models. It's pertinent to note that while this provides a solid foundation, achieving benchmark-setting outcomes demands further refinement and nuanced strategies.
+### Validation
+The model's prowess is tested against the validation set. Misclassifications offer a direction for refinement.
+
+### Prediction
+Predictions on the test set are shaped, spotlighting the top 3 predictions per question, as per competition stipulations.
+
+## ⚡ Room for Improvement
+
+While foundational, numerous enhancements can be explored:
+
+1. **Model Ensembling:** Merging predictions from diverse models might amplify accuracy.
+2. **Hyperparameter Tuning:** Deep-dive exploration for the best parameters can be fruitful.
+3. **Data Augmentation:** Techniques like back translation can bolster the dataset's richness, potentially amplifying model robustness.
+
+## 📣 Concluding Thoughts
+
+This repository reflects a nascent strategy for the Kaggle LLM Science Exam. Marrying the challenge's requirements with transformer models' capabilities lays down a base. Yet, for pinnacle performance, additional refinements and strategies are essential.
 
